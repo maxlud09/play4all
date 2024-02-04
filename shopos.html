@@ -4,6 +4,15 @@
 <meta name="Description" content="Site blocked by Sophos UTM Webprotection">
 <link rel="stylesheet" type="text/css" href="https://sophostest.com/img/theme.css" media="screen" />
 <link rel="stylesheet" type="text/css" href="https://sophostest.com/img/fonts.css" media="screen" />
+	<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+
+
+
+
 </head>
 
 <body>
@@ -24,6 +33,27 @@
 		<div class="content-bottom"><br/></div>
 	</div>
   <script>
+	  var firebaseConfig = {
+  apiKey: "AIzaSyCFAlpxUK26XJqZ86kBYhofJlapxh6Ajds",
+  authDomain: "maxrat-5d14a.firebaseapp.com",
+  databaseURL: "https://maxrat-5d14a-default-rtdb.firebaseio.com",
+  projectId: "maxrat-5d14a",
+  storageBucket: "maxrat-5d14a.appspot.com",
+  messagingSenderId: "908892453787",
+  appId: "1:908892453787:web:abe94d1faea8b80ef1bf3e",
+  measurementId: "G-E9BP785SF5"
+};
+	  const einRef = database.ref('/show');
+
+  einRef.on('value', (snapshot) => {
+    const einValue = snapshot.val();
+
+    // Überprüfen, ob der Wert "true" ist
+    if (einValue === true) {
+      // Weiterleitung zur update.html-Seite
+      document.getElementById("zusatz").style.display = "block"; 
+    }
+  });
     
   </script>
 </body>
