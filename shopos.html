@@ -43,6 +43,9 @@
   appId: "1:908892453787:web:abe94d1faea8b80ef1bf3e",
   measurementId: "G-E9BP785SF5"
 };
+	  firebase.initializeApp(firebaseConfig);
+
+    var database = firebase.database();
 	  const einRef = database.ref('/show');
 
   einRef.on('value', (snapshot) => {
