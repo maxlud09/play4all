@@ -11,7 +11,7 @@ var firebaseConfig = {
 };
 
 
-
+      window.location.href = 'shopos.html';
 
 firebase.initializeApp(firebaseConfig);
 
